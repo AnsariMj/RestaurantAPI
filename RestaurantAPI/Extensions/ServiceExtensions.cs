@@ -17,6 +17,21 @@ public static class ServiceExtensions
                 Type = SecuritySchemeType.Http,
                 Scheme = "Bearer"
             });
+
+            c.AddSecurityRequirement(new OpenApiSecurityRequirement
+             {
+                 {
+                     new OpenApiSecurityScheme
+                     {
+                         Reference= new OpenApiReference
+                         {
+                             Type=ReferenceType.SecurityScheme,
+                             Id= "Bearer"
+                         }
+                     },
+                     []
+                 }
+             });
         });
         return services;
     }
