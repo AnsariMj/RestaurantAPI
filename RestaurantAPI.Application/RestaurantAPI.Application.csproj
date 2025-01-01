@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
   </ItemGroup>
@@ -16,8 +21,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dishes\" />
-    <Folder Include="Restaurants\" />
+    <Folder Include="Handlers\Authentication\Login\Queries\" />
+    <Folder Include="Handlers\Authentication\Register\Queries\" />
+    <Folder Include="Handlers\Dishes\Commands\" />
+    <Folder Include="Handlers\Dishes\Common\" />
+    <Folder Include="Handlers\Dishes\Queries\" />
+    <Folder Include="Handlers\Restaurants\Commands\" />
+    <Folder Include="Handlers\Restaurants\Common\" />
+    <Folder Include="Handlers\Restaurants\Queries\" />
   </ItemGroup>
 
 </Project>

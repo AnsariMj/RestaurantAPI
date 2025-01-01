@@ -1,13 +1,15 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using RestaurantAPI.Domain.Entities;
+using RestaurantAPI.Application.Common.Interface;
 
 namespace RestaurantAPI.Infrastructure.Persistence;
 
-internal class RestaurantDbContext(DbContextOptions<RestaurantDbContext> options) : IdentityDbContext<User>(options)
+public class RestaurantDbContext(DbContextOptions<RestaurantDbContext> options) : IdentityDbContext<User>(options), IRestaurantDbContext
 {
     public DbSet<Dish> Dishes { get; set; }
     public DbSet<Restaurant> Restaurants { get; set; }
+    public DbSet<User> users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
