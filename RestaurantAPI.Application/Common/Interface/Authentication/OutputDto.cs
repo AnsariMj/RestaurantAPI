@@ -1,6 +1,5 @@
 ﻿using System.Text.Json.Serialization;
-using Bookish.Domain.Enums;
-using RestaurantAPI.Domain.Entities;
+using RestaurantAPI.Domain.Enums;
 
 namespace RestaurantAPI.Application.Handlers.Authentication.Register.Common;
 

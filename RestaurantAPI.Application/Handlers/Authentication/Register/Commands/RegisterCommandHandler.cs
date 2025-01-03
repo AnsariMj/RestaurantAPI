@@ -1,5 +1,4 @@
-﻿using Bookish.Domain.Enums;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RestaurantAPI.Application.Common.Interface;

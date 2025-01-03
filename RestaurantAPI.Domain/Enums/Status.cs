@@ -1,4 +1,4 @@
-﻿namespace Bookish.Domain.Enums;
+﻿namespace RestaurantAPI.Domain.Enums;
 
 public enum Status
 {
