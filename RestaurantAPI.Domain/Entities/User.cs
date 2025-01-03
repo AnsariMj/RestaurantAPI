@@ -9,4 +9,6 @@ public class User : IdentityUser
     public string LastName { get; set; }
     public string Email { get; set; }
     public string PasswordHash { get; set; }
+    public string RefreshToken { get; set; }
+    public DateTime RefreshTokenExpiry { get; set; }
 }

@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using System.Security.Cryptography;
+using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RestaurantAPI.Application.Common.Interface;
@@ -31,9 +32,19 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginResponse>
 
         var token = _jwtTokenGenerator.GenerateToken(user);
 
+
         return new LoginResponse
         {
             Token = token,
         };
+    }
+    private string GenrerateRefreshToken()
+    {
+        var randomBytes = new byte[32];
+        using (var rng = RandomNumberGenerator.Create())
+        {
+            rng.GetBytes(randomBytes);
+        }
+        return Convert.ToBase64String(randomBytes);
     }
 }
